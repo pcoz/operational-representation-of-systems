@@ -2,12 +2,12 @@
 
 Edward Chalk, Sapientronic — edward.chalk@sapientronic.ai
 
-A representation of systems in general — the minimal ordinal systems representation, MINOS — is carried into lattice gauge theory
-and tested there. From one rule of evidence, that only the shares of a state can be read and not its frame or its phase, with its
-assumptions stated and counted, the paper produces the gauge group and its classification, the local gauge freedom and Gauss's law, the invariant measure,
-the Wilson character actions (adjoint for complex amplitudes, traceless symmetric for real), and the Casimir kinetic term; and, with
-the readable poles kept as dynamical variables, a definite two-plaquette interaction whose form the model fixes. Every number in the
-paper is produced by the accompanying code.
+A representation of systems in general, the minimal ordinal systems representation (MINOS), is carried into lattice gauge theory
+and tested there. Its rule of evidence is that only the shares of a state can be read, not its frame or its phase. From that rule,
+with every assumption stated, the paper produces the gauge group and its classification, the local gauge freedom and Gauss's law,
+the invariant measure, the Wilson character actions (adjoint for complex amplitudes, traceless symmetric for real) and the Casimir
+kinetic term. With the readable poles kept as dynamical variables it also fixes a definite two-plaquette interaction whose form the
+model determines. Every number in the paper is produced by the accompanying code.
 
 | | |
 |---|---|
