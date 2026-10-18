@@ -7,7 +7,10 @@ authors:
     email: edward.chalk@sapientronic.ai
     affiliation: Sapientronic
 date-released: 2026-10-18
-version: "1.0"
+version: "1.0.1"
+doi: 10.5281/zenodo.23454341
+repository-code: https://github.com/pcoz/operational-representation-of-systems
+url: https://doi.org/10.5281/zenodo.23454341
 type: software
 license: MIT
 abstract: "A minimal ordinal systems representation carried into lattice gauge theory: the gauge group and its classification, the local gauge freedom and Gauss's law, the Wilson character actions selected by what is readable (adjoint for complex amplitudes, traceless symmetric for real), the Casimir kinetic term, and, with the readable poles dynamical, a definite two-plaquette interaction fixed by the model. The code reproduces every numerical check in the paper."
