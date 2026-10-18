@@ -1,0 +1,3 @@
+# the versions the results were produced with (Python 3.13.14)
+numpy==2.2.6
+scipy==1.16.3
