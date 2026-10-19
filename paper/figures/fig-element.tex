@@ -1,0 +1,56 @@
+% Figure 1: the element as a binary comparison, and the relativity of frames
+\begin{tikzpicture}[>=Stealth, font=\small]
+% ---- panel (a): the comparison ----
+\begin{scope}[scale=2.1]
+  \draw[gray!50] (0,0) circle (1);
+  \draw[->, gray] (-1.15,0) -- (1.35,0) node[right, black, font=\footnotesize] {$d$};
+  \draw[->, gray] (0,-1.15) -- (0,1.3) node[right, black, font=\footnotesize] {$I-P_d$};
+  \def\th{38}
+  \coordinate (c) at ({cos(\th)},{sin(\th)});
+  \draw[dashed, gray] (c) -- ({cos(\th)},0);
+  \draw[dashed, gray] (c) -- (0,{sin(\th)});
+  \draw[line width=1.6pt] (0,0) -- ({cos(\th)},0);
+  \draw[line width=1.6pt] (0,0) -- (0,{sin(\th)});
+  \draw[very thick, ->] (0,0) -- (c) node[above right, inner sep=1pt] {$c$};
+  \draw[gray, thick, ->, dash pattern=on 2pt off 1.5pt] (0,0) -- ({-cos(\th)},{-sin(\th)}) node[below left, inner sep=1pt, font=\footnotesize] {$-c$};
+  \draw (0.32,0) arc (0:\th:0.32);
+  \node[font=\footnotesize] at (0.42,0.13) {$\theta$};
+  \node[below, font=\footnotesize] at ({cos(\th)/2},0) {$\cos\theta$};
+  \node[left, font=\footnotesize] at (0,{sin(\th)/2}) {$\sin\theta$};
+  % the two ends
+  \fill (1,0) circle (0.025);
+  \fill (0,1) circle (0.025);
+  \node[below right, font=\footnotesize, text width=2.6cm, align=left] at (0.98,-0.08) {$\theta=0$: all drive,\\ $p=1$, runs on};
+  \node[left, font=\footnotesize, text width=3cm, align=right] at (-0.08,1.0) {$\theta=\pi/2$: all constraint,\\ $p=0$, holds};
+  \node[below, font=\footnotesize, align=center] at (0,-1.3) {passed $p=\tr(P_dQ_c)=\cos^2\theta$ \quad held $h=1-p=\sin^2\theta$};
+  \node[below, font=\footnotesize, align=center, text width=7.8cm] at (0,-1.62) {readable: the shares $p,h$, hence $\arccos\sqrt p$.\\ not readable: the sign of $c$, the orientation of $\theta$, the frame, any phase.};
+  \node[font=\footnotesize\bfseries] at (-1.45,1.35) {(a)};
+\end{scope}
+% ---- panel (b): two elements, each in its own plane ----
+\begin{scope}[xshift=6.9cm, yshift=0.3cm]
+  \node[font=\footnotesize\bfseries] at (-1.6,2.55) {(b)};
+  % element A
+  \begin{scope}[rotate=12, scale=1.15]
+    \draw[gray!50] (0,0) circle (1);
+    \draw[gray, ->] (-1.1,0) -- (1.2,0);
+    \draw[gray, ->] (0,-1.1) -- (0,1.2);
+    \draw[very thick, ->] (0,0) -- (40:1) node[above right, inner sep=1pt] {$c_A$};
+    \draw (0.3,0) arc (0:40:0.3);
+    \node[font=\footnotesize] at (0.45,0.14) {$\theta_A$};
+  \end{scope}
+  \node[font=\footnotesize] at (0,-1.6) {element $A$};
+  % element B
+  \begin{scope}[xshift=3.6cm, rotate=-33, scale=1.15]
+    \draw[gray!50] (0,0) circle (1);
+    \draw[gray, ->] (-1.1,0) -- (1.2,0);
+    \draw[gray, ->] (0,-1.1) -- (0,1.2);
+    \draw[very thick, ->] (0,0) -- (62:1) node[above, inner sep=1pt] {$c_B$};
+    \draw (0.3,0) arc (0:62:0.3);
+    \node[font=\footnotesize] at (0.5,0.2) {$\theta_B$};
+  \end{scope}
+  \node[font=\footnotesize] at (3.6,-1.6) {element $B$};
+  % the relation to be supplied
+  \draw[thick, ->, dash pattern=on 3pt off 2pt] (1.3,0) -- (2.3,0) node[midway, above, font=\footnotesize] {$U_{A\to B}$};
+  \node[font=\footnotesize, align=center, text width=5.6cm] at (1.8,-2.35) {each in its own plane, with no common frame: the relation between them is in neither element and must be supplied};
+\end{scope}
+\end{tikzpicture}

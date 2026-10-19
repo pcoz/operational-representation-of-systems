@@ -1,0 +1,29 @@
+% Figure 5: the chain from the axioms to the results, with the kind of each result
+\begin{tikzpicture}[>=Stealth, font=\footnotesize, node distance=4.5mm,
+  stepbox/.style={draw, rounded corners=2pt, align=left, text width=9.1cm, inner sep=5pt},
+  derived/.style={stepbox, fill=white},
+  recon/.style={stepbox, fill=gray!12},
+  model/.style={stepbox, fill=gray!28},
+  uses/.style={anchor=east, align=right, text width=4.6cm, inner sep=2pt, font=\small\itshape},
+  key/.style={draw, rounded corners=2pt, inner sep=3pt, font=\scriptsize, text width=2.7cm, align=center}]
+\node[derived] (t1) {\textbf{Theorem 1.} A3 postulates that the relations between frames form a closed connected group $G$; the theorem constrains it: a subgroup of $\PU(N)$ ($\C$) or of $\SO(N)$ ($\R$), classified. Every element's frame may be changed independently: local gauge freedom, $U_{x\to y}\mapsto g_yU_{x\to y}g_x^{-1}$. \textbf{The fork:} nothing in A1--A6 selects real or complex.};
+\node[derived, below=of t1] (lat) {\textbf{The construction (\S\ref{sec:construction}).} Configurations $G^E\times(\mathbb P^{N-1})^V$: relations on the interfaces, one held pole per element, drive poles transported by the interface rule. Readables: pass shares and junction angles. Gauss's law, with the pole's charge as its source.};
+\node[derived, below=of lat] (meas) {\textbf{The invariant measure (\S\ref{sec:central}).} Round on $S^{N-1}$ for real amplitudes; Fubini--Study on $\CP^{N-1}$ for complex. They differ.};
+\node[derived, below=of meas] (t2) {\textbf{Theorems 2, 2$'$.} The averaged return loss is a Wilson character action: the \textbf{$\SU(N)$ adjoint} on the complex branch (restricted on the symplectic alternative), \textbf{traceless symmetric} (spin two for $N=3$) on the real. The readable geometry determines the representation content.};
+\node[derived, below=of t2] (t3) {\textbf{Theorem 3.} The information metric on relations is bi-invariant; its Laplacian is the quadratic Casimir.};
+\node[recon, below=of t3] (t4) {\textbf{Theorem 4 (the averaged model).} $H=\frac{g^2}{2}\sum_\ell\Delta_\ell+\frac1{g^2}\sum_pc(U_p)$ on frame-invariant states: Kogut--Susskind in the adjoint (traceless symmetric) reading. The form is assumed, the content of each term forced.};
+\node[model, below=of t4] (t4p) {\textbf{Theorem 4$'$ (the poles live).} There is no pole-neutral sector. With the poles dynamical at stiffness $\kappa$, the character action is the leading term and the next fixes a two-plaquette interaction $K$ wherever two paths are read through one element: its coefficients and angular dependence are not free. Free numbers: $g$ and $\kappa$.};
+\foreach \a/\b in {t1/lat, lat/meas, meas/t2, t2/t3, t3/t4, t4/t4p} \draw[->, thick] (\a) -- (\b);
+% what each step uses, on the left
+\node[uses] at ($(t1.west)+(-0.3,0)$) {A1--A3b, A6; the interface rule of A4\\ (Wigner; Onishchik; Montgomery--Samelson, Borel)};
+\node[uses] at ($(lat.west)+(-0.3,0)$) {A4: adjacency is assumed, not derived};
+\node[uses] at ($(meas.west)+(-0.3,0)$) {A2, A3, A3b; \textbf{A1$\C$ is a hypothesis}};
+\node[uses] at ($(t2.west)+(-0.3,0)$) {\textbf{H1}, the loss rule: one minus the returned share, averaged};
+\node[uses] at ($(t3.west)+(-0.3,0)$) {A2, A3 (Helgason)};
+\node[uses] at ($(t4.west)+(-0.3,0)$) {\textbf{A5}: kinetic plus potential, assumed; H1's average};
+\node[uses] at ($(t4p.west)+(-0.3,0)$) {A4's mean over the path's elements; \textbf{the stiffness $\kappa$}, not fixed by the axioms};
+% key
+\node[key, fill=white, anchor=north west] (k1) at ($(t4p.south west)+(0,-0.45)$) {derived from the postulates};
+\node[key, fill=gray!12, right=2mm of k1] (k2) {reconstructed under stated assumptions};
+\node[key, fill=gray!28, right=2mm of k2] (k3) {consequence of the specified model};
+\end{tikzpicture}

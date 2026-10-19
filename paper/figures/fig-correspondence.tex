@@ -1,0 +1,47 @@
+% Figure: the systems representation and lattice gauge theory side by side
+\begin{tikzpicture}[>=Stealth, font=\footnotesize,
+  elem/.style={circle, draw, thick, fill=white, minimum size=5mm, inner sep=0pt},
+  frame/.style={gray, ->, thin},
+  row/.style={align=center, text width=5.2cm}]
+% ---------------- left: the systems representation ----------------
+\begin{scope}
+  \node[font=\small\bfseries] at (1.0,3.0) {the systems representation};
+  \foreach \x/\y/\r in {0/0/15, 2.0/0/-30, 2.0/2.0/50, 0/2.0/-10} {
+    \begin{scope}[shift={(\x,\y)}, rotate=\r]
+      \draw[frame] (-0.55,0) -- (0.55,0);
+      \draw[frame] (0,-0.55) -- (0,0.55);
+    \end{scope}
+  }
+  \foreach \n/\x/\y in {a/0/0, b/2.0/0, c/2.0/2.0, d/0/2.0} \node[elem] (\n) at (\x,\y) {};
+  \draw[->, thick] (a) -- node[below] {relation} (b);
+  \draw[->, thick] (b) -- node[right] {relation} (c);
+  \draw[->, thick] (c) -- node[above] {relation} (d);
+  \draw[->, thick] (d) -- node[left] {relation} (a);
+  \node[anchor=north, align=center, text width=3.8cm] at (1.0,-0.8) {each element has axes of its own; the relations are supplied between them; a state carried round the four is compared with itself on return};
+\end{scope}
+% ---------------- right: lattice gauge theory ----------------
+\begin{scope}[xshift=11.4cm]
+  \node[font=\small\bfseries] at (1.0,3.0) {lattice gauge theory};
+  \foreach \n/\x/\y in {A/0/0, B/2.0/0, C/2.0/2.0, D/0/2.0} \node[elem] (\n) at (\x,\y) {};
+  \draw[->, thick] (A) -- node[below] {$U_1$} (B);
+  \draw[->, thick] (B) -- node[right] {$U_2$} (C);
+  \draw[->, thick] (C) -- node[above] {$U_3$} (D);
+  \draw[->, thick] (D) -- node[left] {$U_4$} (A);
+  \node[anchor=east, inner sep=1pt] at ($(A)+(-0.22,-0.3)$) {$g_x$};
+  \node[anchor=west, inner sep=1pt] at ($(B)+(0.22,-0.3)$) {$g_y$};
+  \node[anchor=west, inner sep=1pt] at ($(C)+(0.22,0.3)$) {$g_z$};
+  \node[anchor=east, inner sep=1pt] at ($(D)+(-0.22,0.3)$) {$g_w$};
+  \node[font=\scriptsize] at (1.0,1.0) {$\tr\,U_4U_3U_2U_1$};
+  \node[anchor=north, align=center, text width=3.8cm] at (1.0,-0.8) {each site has a gauge choice $g$ of its own; the links carry $U$ between them; the loop is what can be observed};
+\end{scope}
+% ---------------- middle: the dictionary ----------------
+\node[font=\scriptsize] at (6.9,1.2) {%
+\renewcommand{\arraystretch}{1.6}%
+\begin{tabular}{@{}r@{\ {\color{gray}$\longleftrightarrow$}\ }l@{}}
+element & site\\
+its frame, unseen & gauge choice, unseen\\
+supplied relation & link variable $U$\\
+only shares readable & only invariants observable\\
+loss round a closed path & plaquette action
+\end{tabular}};
+\end{tikzpicture}

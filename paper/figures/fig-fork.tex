@@ -1,0 +1,36 @@
+% Figure 3: the loop loss, and the fork between the real and the complex branch
+\begin{tikzpicture}[>=Stealth, font=\small,
+  elem/.style={circle, draw, fill=white, minimum size=5mm, inner sep=0pt, font=\footnotesize},
+  box/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, inner sep=4pt},
+  res/.style={box, thick, fill=gray!8}]
+% ---- the plaquette ----
+\begin{scope}
+  \node[elem] (a) at (0,0) {$x$};
+  \node[elem] (b) at (2.4,0) {};
+  \node[elem] (c) at (2.4,2.4) {};
+  \node[elem] (d) at (0,2.4) {};
+  \draw[->, thick] (a) -- node[below, font=\footnotesize] {$U_1$} (b);
+  \draw[->, thick] (b) -- node[right, font=\footnotesize] {$U_2$} (c);
+  \draw[->, thick] (c) -- node[above, font=\footnotesize] {$U_3$} (d);
+  \draw[->, thick] (d) -- node[left, font=\footnotesize] {$U_4$} (a);
+  % the pole, carried round and returned
+  \draw[line width=1.6pt, {Bar[width=4pt]}-{Bar[width=4pt]}] ($(a)+(-0.9,-0.35)$) -- ($(a)+(-0.4,-0.75)$);
+  \node[font=\footnotesize] at ($(a)+(-1.05,-0.75)$) {$c_x$};
+  \draw[thick, ->, gray!70!black] ($(a)+(-0.3,-0.95)$) -- ($(a)+(-0.55,-1.5)$);
+  \node[font=\footnotesize, gray!70!black, anchor=north] at ($(a)+(-0.3,-1.5)$) {$Wc_x$,\ \ $W=U_4U_3U_2U_1$};
+  \node[font=\footnotesize, align=center, text width=4.3cm] at (1.2,-2.55) {the loss read at $x$:\\ $1-|\langle c_x,Wc_x\rangle|^2$};
+\end{scope}
+% ---- the two branches ----
+\node[box, text width=4.8cm] (r1) at (11.1,4.3) {\textbf{A1$\R$}\quad real amplitudes\\ round measure on $S^{N-1}$, read on $\RP^{N-1}$\\ $\E_n(n\!\cdot\!Rn)^2=\dfrac{(\tr R)^2+N+\tr R^2}{N(N+2)}$};
+\node[res, text width=4.8cm, below=2.5mm of r1] (r2) {$\Sym^2(N)=1\oplus S$\\ $c_\R=\dfrac{2d_S}{N(N+2)}\Big(1-\dfrac{\chi_S(R)}{d_S}\Big)$\\ traceless symmetric; spin two for $N=3$};
+\node[box, text width=4.8cm, below=6mm of r2] (c1) {\textbf{A1$\C$}\quad complex amplitudes\\ Fubini--Study measure on $\CP^{N-1}$\\ $\E_\psi|\langle\psi|U|\psi\rangle|^2=\dfrac{N+|\tr U|^2}{N(N+1)}$};
+\node[res, text width=4.8cm, below=2.5mm of c1] (c2) {$N\otimes\bar N=1\oplus\adj$\\ $c=\dfrac{N-1}{N}\Big(1-\dfrac{\chi_{\adj}(U)}{N^2-1}\Big)$\\ adjoint of $\SU(N)$ (restricted on $\PSp(N/2)$)};
+% ---- the average, placed between the branches ----
+\node[box, text width=4cm] (avg) at (6.2,1.2) {average over the pole with the\\ invariant measure (H1)};
+\draw[->, thick] (3.1,1.2) -- (avg);
+\draw[->, thick] (avg.east) -- ++(0.18,0) |- (r1.west);
+\draw[->, thick] (avg.east) -- ++(0.18,0) |- (c1.west);
+\draw[->, thick] (r1) -- (r2);
+\draw[->, thick] (c1) -- (c2);
+\node[font=\footnotesize, align=center, text width=4.2cm] at (6.2,-1.3) {the same construction;\\ what differs is the readable state\\ geometry the pole is averaged over};
+\end{tikzpicture}

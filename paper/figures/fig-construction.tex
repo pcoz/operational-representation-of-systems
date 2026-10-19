@@ -1,0 +1,46 @@
+% Figure 2: the lattice construction with the poles; the interface rule; the readables
+\begin{tikzpicture}[>=Stealth, font=\small,
+  elem/.style={circle, draw, fill=white, minimum size=6mm, inner sep=0pt, font=\small},
+  pole/.style={line width=1.6pt, {Bar[width=4pt]}-{Bar[width=4pt]}},
+  drive/.style={thick, ->}]
+% ---- the graph ----
+\node[elem] (x) at (0,0) {$x$};
+\node[elem] (w) at (0,2.6) {$w$};
+\node[elem] (y) at (3.6,1.3) {$y$};
+\node[elem] (z) at (7.2,1.3) {$z$};
+\draw[->, thick] (x) -- node[below right=-1pt, font=\footnotesize] {$U_\ell$} (y);
+\draw[->, thick] (w) -- node[above right=-1pt, font=\footnotesize] {$U_{\ell'}$} (y);
+\draw[->, thick] (x) -- node[left, font=\footnotesize] {$U_{x\to w}$} (w);
+\draw[->, thick] (y) -- node[above, font=\footnotesize] {$U_{y\to z}$} (z);
+% held poles at x, w, z: directors (read up to sign)
+\draw[pole] ($(x)+(-0.3,-0.55)$) -- ($(x)+(0.3,-0.55)$);
+\node[font=\footnotesize, below] at ($(x)+(0,-0.6)$) {$c_x$};
+\draw[pole] ($(w)+(-0.15,0.5)$) -- ($(w)+(0.15,0.95)$);
+\node[font=\footnotesize, above] at ($(w)+(0,1)$) {$c_w$};
+\draw[pole] ($(z)+(0.5,-0.3)$) -- ($(z)+(0.5,0.3)$);
+\node[font=\footnotesize, right] at ($(z)+(0.6,0)$) {$c_z$};
+% ---- the magnified element y ----
+\coordinate (Y) at (10.2,1.3);
+\draw[gray, dashed] (y.north east) -- ($(Y)+(-1.55,1.05)$);
+\draw[gray, dashed] (y.south east) -- ($(Y)+(-1.55,-1.05)$);
+\draw[gray!50, fill=gray!4] (Y) circle (1.55);
+\node[font=\footnotesize, gray] at ($(Y)+(0,-1.85)$) {the element $y$, in its own frame};
+% its held pole (director) and the two arrivals
+\draw[pole] ($(Y)+(100:1.2)$) -- ($(Y)+(280:1.2)$);
+\node[font=\footnotesize, below, inner sep=1pt] at ($(Y)+(280:1.2)$) {$c_y$};
+\draw[drive] (Y) -- ($(Y)+(25:1.3)$) node[above right, inner sep=1pt, font=\footnotesize] {$d_{y,\ell}=U_\ell c_x$};
+\draw[drive] (Y) -- ($(Y)+(160:1.3)$) node[above left, inner sep=1pt, font=\footnotesize] {$d_{y,\ell'}=U_{\ell'}c_w$};
+% pass share angle between d_{y,l} and c_y ; junction angle between the two arrivals
+\draw ($(Y)+(25:0.55)$) arc (25:100:0.55);
+\node[font=\scriptsize] at ($(Y)+(62:0.78)$) {pass};
+\draw[dash pattern=on 1.5pt off 1pt] ($(Y)+(25:0.9)$) arc (25:160:0.9);
+\node[font=\scriptsize, fill=gray!4, inner sep=1pt] at ($(Y)+(130:1.12)$) {junction};
+% ---- the rules, below ----
+\node[align=left, font=\footnotesize, anchor=north west, text width=7cm] at (-0.6,-1.35) {%
+\textbf{interface rule} (A4): the drive pole $y$ receives along $\ell$ is $x$'s held pole carried across, $d_{y,\ell}=U_\ell c_x$.\\[2pt]
+\textbf{readables of $y$}: pass shares $|\langle d_{y,\ell},c_y\rangle|^2$, one per arrival; junction angles $|\langle d_{y,\ell},d_{y,\ell'}\rangle|^2$, one per pair.};
+\node[align=left, font=\footnotesize, anchor=north west, text width=7cm] at (6.9,-1.35) {%
+\textbf{frame change} at every element, $(g_x)_{x\in V}$:\\
+$c_x\mapsto g_xc_x,\qquad U_{x\to y}\mapsto g_y\,U_{x\to y}\,g_x^{-1}$;\\[2pt]
+every pass share and junction angle unchanged; the generator at $y$ (electric fields at $y$ plus the rotation of $c_y$) annihilates physical states: Gauss's law.};
+\end{tikzpicture}

@@ -2,7 +2,7 @@
 
 Edward Chalk, Sapientronic — edward.chalk@sapientronic.ai
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23454341.svg)](https://doi.org/10.5281/zenodo.23454341)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23454340.svg)](https://doi.org/10.5281/zenodo.23454340)
 
 ## What this is
 
@@ -64,8 +64,8 @@ Checks 17–21 need scipy and are skipped without it. `requirements.txt` pins th
 
 | | |
 |---|---|
-| `paper/an-operational-representation-of-systems.tex` | the paper (LaTeX source) |
-| `paper/an-operational-representation-of-systems.pdf` | the paper, built from the source |
+| `paper/minos-a-minimal-ordinal-representation-of-systems-worked-construction-in-lattice-gauge-theory.tex` | the paper (LaTeX source) |
+| `paper/minos-a-minimal-ordinal-representation-of-systems-worked-construction-in-lattice-gauge-theory.pdf` | the paper, built from the source |
 | `code/minos_yang_mills.py` | the script that produces every check |
 | `code/results.txt`, `code/results.json` | its output, as used in the paper |
 | `code/requirements.txt` | pinned dependencies |
@@ -83,7 +83,7 @@ The paper (everything under `paper/`) is © 2026 Edward Chalk, all rights reserv
 If you use the code or build on the paper, please cite:
 
 > E. Chalk, *An Operational Representation of Systems: A Worked Construction in Lattice Gauge Theory* (2026).
-> Zenodo. https://doi.org/10.5281/zenodo.23454341
+> Zenodo. https://doi.org/10.5281/zenodo.23454340
 
 The DOI resolves to the archived copy of the release on Zenodo; the repository itself is at
 https://github.com/pcoz/operational-representation-of-systems. `CITATION.cff` carries the same information for reference managers.

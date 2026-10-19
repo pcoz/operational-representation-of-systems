@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "An Operational Representation of Systems: A Worked Construction in Lattice Gauge Theory"
+title: "An Operational Representation of Systems: A Worked Construction in Lattice Gauge Theory (MINOS, a minimal ordinal representation of systems)"
 authors:
   - family-names: Chalk
     given-names: Edward
     email: edward.chalk@sapientronic.ai
     affiliation: Sapientronic
-date-released: 2026-10-18
-version: "1.0.1"
-doi: 10.5281/zenodo.23454341
+date-released: 2026-10-19
+version: "1.1.0"
+doi: 10.5281/zenodo.23454340
 repository-code: https://github.com/pcoz/operational-representation-of-systems
-url: https://doi.org/10.5281/zenodo.23454341
+url: https://doi.org/10.5281/zenodo.23454340
 type: software
 license: MIT
 abstract: "A minimal ordinal systems representation carried into lattice gauge theory: the gauge group and its classification, the local gauge freedom and Gauss's law, the Wilson character actions selected by what is readable (adjoint for complex amplitudes, traceless symmetric for real), the Casimir kinetic term, and, with the readable poles dynamical, a definite two-plaquette interaction fixed by the model. The code reproduces every numerical check in the paper."
