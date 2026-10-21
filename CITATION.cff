@@ -6,8 +6,8 @@ authors:
     given-names: Edward
     email: edward.chalk@sapientronic.ai
     affiliation: Sapientronic
-date-released: 2026-10-19
-version: "1.1.0"
+date-released: 2026-10-21
+version: "1.2.0"
 doi: 10.5281/zenodo.23454340
 repository-code: https://github.com/pcoz/operational-representation-of-systems
 url: https://doi.org/10.5281/zenodo.23454340
