@@ -2,7 +2,7 @@
 
 Edward Chalk, Sapientronic — edward.chalk@sapientronic.ai
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23454340.svg)](https://doi.org/10.5281/zenodo.23454340)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23491023.svg)](https://doi.org/10.5281/zenodo.23491023)
 
 ## What this is
 
@@ -83,7 +83,7 @@ The paper (everything under `paper/`) is © 2026 Edward Chalk, all rights reserv
 If you use the code or build on the paper, please cite:
 
 > E. Chalk, *An Operational Representation of Systems: A Worked Construction in Lattice Gauge Theory* (2026).
-> Zenodo. https://doi.org/10.5281/zenodo.23454340
+> Zenodo. https://doi.org/10.5281/zenodo.23491023
 
-The DOI resolves to the archived copy of the release on Zenodo; the repository itself is at
+The DOI resolves to the paper on Zenodo (every version); the repository itself is at
 https://github.com/pcoz/operational-representation-of-systems. `CITATION.cff` carries the same information for reference managers.
